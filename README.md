@@ -75,7 +75,13 @@ SplineNavbar(
   backgroundColor: Colors.white,
   borderColor: const Color(0xFF6E7CFF),
   shadowColor: Colors.black12,
+  // Default animation
   animation: SplineNavbarAnimation.spring,
+  // Per-target override (takes precedence over animation)
+  animationResolver: (target) {
+    if (target == 1) return SplineNavbarAnimation.fade;
+    return SplineNavbarAnimation.spring;
+  },
 );
 ```
 

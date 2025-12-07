@@ -102,7 +102,7 @@ class SplineNavbarPainter extends CustomPainter {
 
     canvas.drawShadow(
       finalPath,
-      shadowColor.withOpacity(0.55),
+      _withAlpha(shadowColor, 0.55),
       10,
       false,
     );
@@ -113,12 +113,12 @@ class SplineNavbarPainter extends CustomPainter {
     final gradientColors = activeOnLeft
         ? [
             borderColor,
-            borderColor.withOpacity(0.35),
-            Colors.white.withOpacity(0.92),
+            _withAlpha(borderColor, 0.35),
+            _withAlpha(Colors.white, 0.92),
           ]
         : [
-            Colors.white.withOpacity(0.92),
-            borderColor.withOpacity(0.35),
+            _withAlpha(Colors.white, 0.92),
+            _withAlpha(borderColor, 0.35),
             borderColor,
           ];
     final stroke = Paint()
@@ -135,4 +135,10 @@ class SplineNavbarPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+}
+
+Color _withAlpha(Color color, double alpha) {
+  // Using withOpacity for widest Flutter compatibility (3.0+).
+  // ignore: deprecated_member_use
+  return color.withOpacity(alpha);
 }

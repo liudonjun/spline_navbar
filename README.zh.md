@@ -74,7 +74,13 @@ SplineNavbar(
   backgroundColor: Colors.white,
   borderColor: const Color(0xFF6E7CFF),
   shadowColor: Colors.black12,
+  // 默认动画
   animation: SplineNavbarAnimation.spring,
+  // 可按目标 index 自定义动画（优先于 animation）
+  animationResolver: (target) {
+    if (target == 1) return SplineNavbarAnimation.fade;
+    return SplineNavbarAnimation.spring;
+  },
 );
 ```
 

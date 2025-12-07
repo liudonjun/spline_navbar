@@ -1,7 +1,7 @@
 ## 0.1.4
 
-- Add `animationResolver` to `SplineNavbar` for per-target animation override.
-- Default behavior unchanged; resolver result takes priority over `animation`.
+- Add `animationResolver` to `SplineNavbar` for per-target animation override; resolver result takes priority over `animation`.
+- Reduce analyzer warnings by routing opacity tweaks through helper `_withAlpha` (compatibility for Flutter 3.0+).
 
 ## 0.1.3
 
