@@ -3,37 +3,18 @@ name: Publish to pub.dev
 on:
   push:
     tags:
-      - "v*"
+      - "v[0-9]+.[0-9]+.[0-9]+*"
   workflow_dispatch:
-
-permissions:
-  id-token: write
-  contents: read
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          flutter-version: "3.32.1"
-
-      - name: Flutter Pub Get
-        run: flutter pub get
-
-      - name: Analyze
-        run: flutter analyze
-
-      - name: Publish to pub.dev via OIDC
-        env:
-          CI: true
-          # 如需中国镜像，可取消以下注释：
-          # PUB_HOSTED_URL: https://pub.flutter-io.cn
-          # FLUTTER_STORAGE_BASE_URL: https://storage.flutter-io.cn
-        run: flutter pub publish --force
+    permissions:
+      id-token: write   # Required for OIDC
+      contents: read
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    # with:
+    #   working-directory: .
+    # env:
+    #   PUB_HOSTED_URL: https://pub.dev
+    #   FLUTTER_STORAGE_BASE_URL: https://storage.googleapis.com
 
