@@ -31,6 +31,7 @@ jobs:
 
       - name: Publish to pub.dev via OIDC
         env:
+          CI: true
           # 如需中国镜像，可取消以下注释：
           # PUB_HOSTED_URL: https://pub.flutter-io.cn
           # FLUTTER_STORAGE_BASE_URL: https://storage.flutter-io.cn
