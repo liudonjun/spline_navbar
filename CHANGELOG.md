@@ -1,3 +1,8 @@
+## 0.1.2
+
+- Bump version for next pub.dev publish attempt.
+- Keep formatting fixes for core library files (`spline_navbar.dart`, `spline_navbar_item.dart`, `spline_navbar_painter.dart`).
+
 ## 0.1.1
 
 - Lowered SDK/Flutter constraints to `sdk: ">=3.0.0 <4.0.0"` and `flutter: ">=3.0.0"`.
