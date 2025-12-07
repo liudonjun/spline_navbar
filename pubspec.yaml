@@ -1,13 +1,13 @@
 name: spline_navbar
 description: "A spline-style animated bottom navigation bar for Flutter."
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/liudonjun/spline_navbar
 repository: https://github.com/liudonjun/spline_navbar
 issue_tracker: https://github.com/liudonjun/spline_navbar/issues
 
 environment:
-  sdk: ^3.8.1
-  flutter: ">=1.17.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
