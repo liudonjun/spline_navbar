@@ -1,3 +1,8 @@
+## 0.1.4
+
+- Add `animationResolver` to `SplineNavbar` for per-target animation override.
+- Default behavior unchanged; resolver result takes priority over `animation`.
+
 ## 0.1.3
 
 - Restore `withOpacity` for color tweaks to support Flutter 3.0–3.22.

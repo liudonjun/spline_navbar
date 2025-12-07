@@ -29,7 +29,7 @@ Install via pub.dev:
 
 ```yaml
 dependencies:
-  spline_navbar: ^0.1.3
+  spline_navbar: ^0.1.4
 ```
 
 Using the Git repo:

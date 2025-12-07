@@ -21,6 +21,10 @@ class SplineNavbar extends StatelessWidget {
   final double horizontalInset;
   final SplineNavbarAnimation animation;
 
+  /// Optional per-target animation resolver. If provided, its return value
+  /// overrides [animation] for the current target index.
+  final SplineNavbarAnimation Function(int targetIndex)? animationResolver;
+
   const SplineNavbar({
     super.key,
     required this.items,
@@ -33,6 +37,7 @@ class SplineNavbar extends StatelessWidget {
     this.badgeSize = 40,
     this.horizontalInset = 25,
     this.animation = SplineNavbarAnimation.none,
+    this.animationResolver,
   });
 
   @override
@@ -42,6 +47,8 @@ class SplineNavbar extends StatelessWidget {
     final safeBottom = mediaQuery.padding.bottom;
     final height = barHeight * scale + safeBottom;
     final notchRadius = badgeSize * scale * 0.65;
+    final resolvedAnimation =
+        animationResolver?.call(selectedIndex) ?? animation;
 
     return SizedBox(
       height: height,
@@ -50,7 +57,7 @@ class SplineNavbar extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           Positioned.fill(
-            child: switch (animation) {
+            child: switch (resolvedAnimation) {
               SplineNavbarAnimation.slide => TweenAnimationBuilder<double>(
                   duration: const Duration(milliseconds: 280),
                   curve: Curves.easeInOut,
