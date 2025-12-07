@@ -28,7 +28,7 @@ Spline Navbar 是一个 Flutter 底部导航栏组件，提供圆角底条、凹
 
 ```yaml
 dependencies:
-  spline_navbar: ^0.1.1
+  spline_navbar: ^0.1.3
 ```
 
 从 Git 仓库引用：

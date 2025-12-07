@@ -102,7 +102,7 @@ class SplineNavbarPainter extends CustomPainter {
 
     canvas.drawShadow(
       finalPath,
-      shadowColor.withValues(alpha: 0.55),
+      shadowColor.withOpacity(0.55),
       10,
       false,
     );
@@ -113,12 +113,12 @@ class SplineNavbarPainter extends CustomPainter {
     final gradientColors = activeOnLeft
         ? [
             borderColor,
-            borderColor.withValues(alpha: 0.35),
-            Colors.white.withValues(alpha: 0.92),
+            borderColor.withOpacity(0.35),
+            Colors.white.withOpacity(0.92),
           ]
         : [
-            Colors.white.withValues(alpha: 0.92),
-            borderColor.withValues(alpha: 0.35),
+            Colors.white.withOpacity(0.92),
+            borderColor.withOpacity(0.35),
             borderColor,
           ];
     final stroke = Paint()

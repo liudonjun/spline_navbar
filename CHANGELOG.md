@@ -1,3 +1,8 @@
+## 0.1.3
+
+- Restore `withOpacity` for color tweaks to support Flutter 3.0–3.22.
+- No API changes; painter shadow/gradient now use `withOpacity`.
+
 ## 0.1.2
 
 - Bump version for next pub.dev publish attempt.
