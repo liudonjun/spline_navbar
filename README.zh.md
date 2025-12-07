@@ -1,7 +1,7 @@
 # Spline Navbar
 
-![Flutter](https://img.shields.io/badge/Flutter-3.32.1%2B-blue?logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-3.8%2B-0175C2?logo=dart&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-3.0%2B-blue?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-3.0%2B-0175C2?logo=dart&logoColor=white)
 ![HarmonyOS](https://img.shields.io/badge/HarmonyOS-Next-orange)
 
 [English README](README.md) · 中文文档
@@ -19,8 +19,8 @@ Spline Navbar 是一个 Flutter 底部导航栏组件，提供圆角底条、凹
 
 ## 环境要求
 
-- Flutter ≥ 3.24
-- Dart ≥ 3.8
+- Flutter ≥ 3.0.0
+- Dart ≥ 3.0.0
 
 ## 安装
 
@@ -28,7 +28,7 @@ Spline Navbar 是一个 Flutter 底部导航栏组件，提供圆角底条、凹
 
 ```yaml
 dependencies:
-  spline_navbar: ^0.1.0
+  spline_navbar: ^0.1.1
 ```
 
 从 Git 仓库引用：
@@ -82,9 +82,6 @@ SplineNavbar(
 
 ## 截图 / 演示
 
-- 将你的 GIF/PNG 放到 `screenshots/` 目录，并在此处引用。
-- 建议：录制 2~3 个标签切换的凹槽/徽章动效短 GIF。
-- 动画枚举占位（替换为实际图片）：
   - 无动画  
     ![500](screenshots/README.zh/file-20251207120030341.gif)  
     ```dart

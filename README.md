@@ -1,7 +1,7 @@
 # Spline Navbar
 
-![Flutter](https://img.shields.io/badge/Flutter-3.24%2B-blue?logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-3.8%2B-0175C2?logo=dart&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-3.0%2B-blue?logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-3.0%2B-0175C2?logo=dart&logoColor=white)
 ![HarmonyOS](https://img.shields.io/badge/HarmonyOS-Next-orange)
 
 English README · [中文文档](README.zh.md)
@@ -20,8 +20,8 @@ Spline Navbar is a Flutter bottom navigation bar with rounded rail, notch, badge
 
 ## Requirements
 
-- Flutter ≥ 3.24 (uses `Color.withValues` and other recent APIs)
-- Dart ≥ 3.8
+- Flutter ≥ 3.0.0
+- Dart ≥ 3.0.0
 
 ## Installation
 
@@ -29,7 +29,7 @@ Install via pub.dev:
 
 ```yaml
 dependencies:
-  spline_navbar: ^0.1.0
+  spline_navbar: ^0.1.1
 ```
 
 Using the Git repo:
@@ -83,9 +83,6 @@ See `example/lib/main.dart` for the full demo.
 
 ## Screenshots / Demos
 
-- Add your GIF/PNG to the `screenshots/` folder and link it here.
-- Suggested: a short GIF showing notch/badge animation for two or three tabs.
-- Animation previews (replace with real images):
   - None  
     ![500](screenshots/README/file-20251207115822951.gif)  
     ```dart
