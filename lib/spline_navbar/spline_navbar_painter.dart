@@ -47,8 +47,8 @@ class SplineNavbarPainter extends CustomPainter {
     final tangentHandle = notchRadius * 0.4;
 
     final double topY = (size.height * depth) + cornerRadius * 0.18;
-    final double arcCenterY = (topY + notchRadius * (1 - notchLiftFactor))
-        .clamp(0, size.height);
+    final double arcCenterY =
+        (topY + notchRadius * (1 - notchLiftFactor)).clamp(0, size.height);
     final Offset arcStart = Offset(centerX - notchRadius, arcCenterY);
     final Offset arcEnd = Offset(centerX + notchRadius, arcCenterY);
 

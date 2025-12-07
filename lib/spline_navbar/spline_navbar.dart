@@ -52,41 +52,61 @@ class SplineNavbar extends StatelessWidget {
           Positioned.fill(
             child: switch (animation) {
               SplineNavbarAnimation.slide => TweenAnimationBuilder<double>(
-                duration: const Duration(milliseconds: 280),
-                curve: Curves.easeInOut,
-                tween: Tween<double>(
-                  begin: selectedIndex.toDouble(),
-                  end: selectedIndex.toDouble(),
+                  duration: const Duration(milliseconds: 280),
+                  curve: Curves.easeInOut,
+                  tween: Tween<double>(
+                    begin: selectedIndex.toDouble(),
+                    end: selectedIndex.toDouble(),
+                  ),
+                  builder: (_, animIndex, __) {
+                    return CustomPaint(
+                      painter: SplineNavbarPainter(
+                        itemCount: items.length,
+                        selectedIndex: selectedIndex,
+                        animatedIndex: animIndex,
+                        backgroundColor: backgroundColor,
+                        borderColor: borderColor,
+                        shadowColor: shadowColor,
+                        notchRadius: notchRadius,
+                        depth: 0.07,
+                        horizontalInset: horizontalInset * scale,
+                      ),
+                    );
+                  },
                 ),
-                builder: (_, animIndex, __) {
-                  return CustomPaint(
-                    painter: SplineNavbarPainter(
-                      itemCount: items.length,
-                      selectedIndex: selectedIndex,
-                      animatedIndex: animIndex,
-                      backgroundColor: backgroundColor,
-                      borderColor: borderColor,
-                      shadowColor: shadowColor,
-                      notchRadius: notchRadius,
-                      depth: 0.07,
-                      horizontalInset: horizontalInset * scale,
-                    ),
-                  );
-                },
-              ),
               SplineNavbarAnimation.spring => TweenAnimationBuilder<double>(
-                duration: const Duration(milliseconds: 320),
-                curve: Curves.easeOutBack,
-                tween: Tween<double>(
-                  begin: selectedIndex.toDouble(),
-                  end: selectedIndex.toDouble(),
+                  duration: const Duration(milliseconds: 320),
+                  curve: Curves.easeOutBack,
+                  tween: Tween<double>(
+                    begin: selectedIndex.toDouble(),
+                    end: selectedIndex.toDouble(),
+                  ),
+                  builder: (_, animIndex, __) {
+                    return CustomPaint(
+                      painter: SplineNavbarPainter(
+                        itemCount: items.length,
+                        selectedIndex: selectedIndex,
+                        animatedIndex: animIndex,
+                        backgroundColor: backgroundColor,
+                        borderColor: borderColor,
+                        shadowColor: shadowColor,
+                        notchRadius: notchRadius,
+                        depth: 0.07,
+                        horizontalInset: horizontalInset * scale,
+                      ),
+                    );
+                  },
                 ),
-                builder: (_, animIndex, __) {
-                  return CustomPaint(
+              SplineNavbarAnimation.fade => AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 220),
+                  switchInCurve: Curves.easeOut,
+                  switchOutCurve: Curves.easeIn,
+                  child: CustomPaint(
+                    key: ValueKey(selectedIndex),
                     painter: SplineNavbarPainter(
                       itemCount: items.length,
                       selectedIndex: selectedIndex,
-                      animatedIndex: animIndex,
+                      animatedIndex: selectedIndex.toDouble(),
                       backgroundColor: backgroundColor,
                       borderColor: borderColor,
                       shadowColor: shadowColor,
@@ -94,15 +114,9 @@ class SplineNavbar extends StatelessWidget {
                       depth: 0.07,
                       horizontalInset: horizontalInset * scale,
                     ),
-                  );
-                },
-              ),
-              SplineNavbarAnimation.fade => AnimatedSwitcher(
-                duration: const Duration(milliseconds: 220),
-                switchInCurve: Curves.easeOut,
-                switchOutCurve: Curves.easeIn,
-                child: CustomPaint(
-                  key: ValueKey(selectedIndex),
+                  ),
+                ),
+              SplineNavbarAnimation.none => CustomPaint(
                   painter: SplineNavbarPainter(
                     itemCount: items.length,
                     selectedIndex: selectedIndex,
@@ -115,20 +129,6 @@ class SplineNavbar extends StatelessWidget {
                     horizontalInset: horizontalInset * scale,
                   ),
                 ),
-              ),
-              SplineNavbarAnimation.none => CustomPaint(
-                painter: SplineNavbarPainter(
-                  itemCount: items.length,
-                  selectedIndex: selectedIndex,
-                  animatedIndex: selectedIndex.toDouble(),
-                  backgroundColor: backgroundColor,
-                  borderColor: borderColor,
-                  shadowColor: shadowColor,
-                  notchRadius: notchRadius,
-                  depth: 0.07,
-                  horizontalInset: horizontalInset * scale,
-                ),
-              ),
             },
           ),
           Positioned(
